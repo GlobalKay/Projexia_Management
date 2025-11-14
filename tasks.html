@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projexia | Tasks</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <img id="logo" src="C:\Users\ANOINTED\Desktop\Projexia_Management\assets\Projexia[1].PNG" alt="Projexia Logo" class="logo-small" width="150px" height="150px">
+    <div class="toggle-container">
+      
+      <div id="themeToggle" class="toggle-switch"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="add-section">
+      <h2>Add New Task</h2>
+      <form id="taskForm">
+        <input type="text" id="taskName" placeholder="Task Name" required />
+        <input type="text" id="taskProject" placeholder="Project Name" required />
+        <select id="taskStatus">
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2>All Tasks</h2>
+      <table id="tasksTable">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Project</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://mwdokvkofktfolhygxie.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im13ZG9rdmtvZmt0Zm9saHlneGllIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwNTI3NjEsImV4cCI6MjA3ODYyODc2MX0.ESUMyWD-qRJsJpuxQiq-To06xTw5OoAQqUoCDpYyppk";
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.js"></script>
+<script src="supabase.js"></script>
+
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

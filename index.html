@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projexia | Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <img id="logo" src="C:\Users\ANOINTED\Desktop\Projexia_Management\assets\Projexia[1].PNG" alt="Projexia Logo" class="logo-small" width="150px" height="150px">
+    <ul>
+      <li><a href="index.html" class="active">Dashboard</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="tasks.html">Tasks</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><button id="themeToggle">🌙</button></li>
+      <li><button id="logoutBtn">Logout</button></li>
+    </ul>
+  </nav>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.js"></script>
+<script src="supabase.js"></script>
+
+  <main class="dashboard">
+    <h1>Welcome to Projexia Dashboard</h1>
+    <div class="cards">
+      <a href="projects.html" class="card">
+        <h2>Projects</h2>
+        <p>Manage your projects</p>
+      </a>
+      <a href="tasks.html" class="card">
+        <h2>Tasks</h2>
+        <p>Track your progress</p>
+      </a>
+      <a href="clients.html" class="card">
+        <h2>Clients</h2>
+        <p>View and manage clients</p>
+      </a>
+    </div>
+  </main>
+  
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projexia | Login</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-container">
+    
+    <h2>Login to Projexia</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p>Don’t have an account? <a href="signup.html">Sign up</a></p>
+    </form>
+
+     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.js"></script>
+<script src="supabase.js"></script>
+
+    <script>
+  const loginForm = document.getElementById("loginForm");
+
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    // Log in user
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
+
+    if (error) {
+      alert("Login failed: " + error.message);
+    } else {
+      alert("Login successful!");
+
+      // Store session locally
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      // Redirect to dashboard
+      window.location.href = "dashboard.html";
+    }
+  });
+</script>
+
+    <p id="loginMessage"></p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://mwdokvkofktfolhygxie.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im13ZG9rdmtvZmt0Zm9saHlneGllIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwNTI3NjEsImV4cCI6MjA3ODYyODc2MX0.ESUMyWD-qRJsJpuxQiq-To06xTw5OoAQqUoCDpYyppk";
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.js"></script>
+<script src="supabase.js"></script>
+
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+  if (error) {
+    alert("❌ Login failed: " + error.message);
+  } else {
+    alert("✅ Login successful!");
+    window.location.href = "index.html"; // redirect to your dashboard
+  }
+});
+</script>
+
+
+  <script src="assets/js/login.js"></script>
+</body>
+</html>
